@@ -1,0 +1,6 @@
+= simple_form_for [comment], html: {class: '' } do |f|
+  = f.input :commentable_id, as: :hidden
+  = f.input :commentable_type, as: :hidden
+  = f.input :username
+  = f.input :message
+  = f.submit 'comentar', class: 'btn'

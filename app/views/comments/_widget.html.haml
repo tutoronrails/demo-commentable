@@ -1,0 +1,16 @@
+%hr
+
+%h2 Comments
+- commentable.comments.each do |comment|
+  %div{id: "comment-#{comment.to_param}"}
+    .row
+      .col-sm-2
+        %strong= comment.username
+      .col-sm-8
+        = link_to "#comment-#{comment.to_param}" do
+          %span.glyphicon.glyphicon-link
+          = time_ago_in_words(comment.created_at)
+          ago
+        %p= comment.message
+
+= render 'comments/form', comment: commentable.comments.build

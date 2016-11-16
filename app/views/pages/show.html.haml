@@ -1,3 +1,5 @@
 %h1= @page.title
 
 %p= @page.content
+
+= render 'comments/widget', commentable: @page
